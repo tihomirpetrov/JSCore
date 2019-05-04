@@ -13,5 +13,3 @@ let result;
     }
     console.log(result)
 }
-
-solve('Frabjoyousday');
