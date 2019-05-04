@@ -3,7 +3,7 @@ function solve(input) {
 
     if (inputType === 'number')
     {
-        let area = Math.pow(input,2) * Math.PI;
+        let area = Math.pow(input, 2) * Math.PI;
         console.log(area.toFixed(2));
     }
     else
