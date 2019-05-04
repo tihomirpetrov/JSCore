@@ -10,4 +10,3 @@ function solve(num) {
            console.log();
        }
 }
-solve(2);
