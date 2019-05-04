@@ -4,7 +4,7 @@ function solve(n, m) {
     let firstNumber = Number(n);
     let secondNumber = Number(m);
 
-    for (let i = firstNumber; i <= secondNumber ; i++) {
+    for (let i = firstNumber; i <= secondNumber; i++) {
         result += i;
     }
 
