@@ -1,18 +1,5 @@
 function solve(words) {
-    let wordsUppercase = '';
+    let wordsUppercase = words.toUpperCase().split(/\W+/).filter(x => x !== '');
 
-    for (let i = 0, l = words.length; i < l; i++) {
-
-        if (words[i] == "," || words[i] == "!" || words[i] == "?") {
-            wordsUppercase += '';
-        } else if (words[i] == " " || words[i] == ".") {
-            wordsUppercase += ', ';
-        } else {
-            wordsUppercase += words[i].toUpperCase();
-        }
-    }
-
-    console.log(wordsUppercase);
+    console.log(wordsUppercase.join(', '));
 }
-
-solve('Hi, how are you?');
