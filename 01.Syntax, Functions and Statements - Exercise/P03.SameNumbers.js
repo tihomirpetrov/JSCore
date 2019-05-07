@@ -1,14 +1,26 @@
 function solve(number) {
 
-    number = Number(number);
-    let sum = 0;
+    let numberAsText = number.toString();
 
-    for (let i = 0; i < number.length; i++) {
-
-        sum += number[i];
-
+    let isEqual = true;
+    for (let i = 0; i < numberAsText.length - 1; i++) {
+        if (Number(numberAsText[0]) === Number(numberAsText[i + 1])) {
+            continue;
+        }
+        isEqual = false;
+        break;
     }
-    console.log(sum);
-}
 
-solve(22222)
+    if (isEqual == true) {
+        console.log(`true`);
+    } else {
+        console.log(`false`);
+    }
+    let totalSum = 0;
+
+    for (let i = 0; i < numberAsText.length; i++) {
+        totalSum += Number(numberAsText[i]);
+    }
+    console.log(Number(totalSum));
+}
+solve(22222);
