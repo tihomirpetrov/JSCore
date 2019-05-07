@@ -23,4 +23,3 @@ function solve(number) {
     }
     console.log(Number(totalSum));
 }
-solve(22222);
