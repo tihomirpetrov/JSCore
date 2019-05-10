@@ -13,5 +13,3 @@ function solve(arr) {
     process.stdout.write(`${arr[arr.length - 2]}: ${arr[arr.length - 1]}`);
     process.stdout.write(" }");
 }
-
-solve(['Yoghurt', 48, 'Rise', 138, 'Apple', 52]);
