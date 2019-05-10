@@ -16,3 +16,4 @@ function solve(arr) {
         console.log(number);
     }
 }
+solve(['9', 'dice', 'spice', 'chop', 'bake', 'fillet']);
