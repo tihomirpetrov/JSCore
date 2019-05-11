@@ -2,11 +2,11 @@ function solve(towns) {
 
     let townsArr = [];
     for (let town of towns.slice(1)) {
-        let [empty, townName, lat, lng] = town.split(/\s*\|\s*/);
+        let [empty, townName, latitude, longitude] = town.split(/\s*\|\s*/);
         let townObj = {
             Town: townName,
-            Latitude: Number(lat),
-            Longitude: Number(lng)
+            Latitude: Number(latitude),
+            Longitude: Number(longitude)
         };
         townsArr.push(townObj);
     }
