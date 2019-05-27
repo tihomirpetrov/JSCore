@@ -8,11 +8,11 @@ function a(input) {
 
         if (sums[town] == undefined) {
             sums[town] = income;
-        }
-        else {
+        } else {
             sums[town] += income;
         }
     }
     return JSON.stringify(sums);
 }
-console.log(a(['Sofia', '20', 'Varna', '3', 'Sofia', '5', 'Varna', '4']));
+
+solve(['Sofia', '20', 'Varna', '3', 'Sofia', '5', 'Varna', '4']);
