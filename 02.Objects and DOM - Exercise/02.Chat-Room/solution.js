@@ -9,7 +9,7 @@ function solve() {
         let targetDivClone = targetDiv.cloneNode(true);
         let chatInputText = chatInput.value;
 
-        if (chatInputText.length > 0) {
+        if (chatInputText !== "") {
             targetDivClone.textContent = chatInputText;
             chatMsgArea.appendChild(targetDivClone);
 
