@@ -18,7 +18,7 @@ function solve() {
     let rightBtns = document.getElementsByClassName("quiz-answer high-value");
     for (let i = 0; i < rightBtns.length; i++) {
         rightBtns[i].addEventListener("click", () => {
-            if (rightBtns[i].children[0].children[0] == correctAnswers[i]) {
+            if (rightBtns[i].children[0].children[0].textContent == correctAnswers[i]) {
                 quizPoints++;
             }
             changeSection();
