@@ -20,9 +20,9 @@ function solve() {
             let newRow = row.cloneNode(true);
             rows.appendChild(newRow);
             newRow.children[0].children[0].setAttribute('src', furniture["img"]);
-            newRow.children[1].textContent = furniture["name"];
-            newRow.children[2].textContent = furniture["price"];
-            newRow.children[3].textContent = furniture["decFactor"];
+            newRow.children[1].children[0].textContent = furniture["name"];
+            newRow.children[2].children[0].textContent = furniture["price"];
+            newRow.children[3].children[0].textContent = furniture["decFactor"];
         }
         generateBtn.disabled = true;
     });
@@ -48,9 +48,9 @@ function solve() {
         for (let i = 1; i < tableRows.length; i++) {
             let box = tableRows[i].children[4].children[0];
             if (box.checked == true) {
-                names.push(tableRows[i].children[1].textContent);
-                totalPrice += Number(tableRows[i].children[2].textContent);
-                decFactor += Number(tableRows[i].children[3].textContent);
+                names.push(tableRows[i].children[1].children[0].textContent);
+                totalPrice += Number(tableRows[i].children[2].children[0].textContent);
+                decFactor += Number(tableRows[i].children[3].children[0].textContent);
             }
         }
         buyBtn.disabled = true;
