@@ -1,6 +1,5 @@
 function solve() {
     let allInfo = document.querySelector("tbody").children;
-
     let searchBtn = document.querySelector("#searchBtn");
     searchBtn.addEventListener("click", () => {
 
