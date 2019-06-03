@@ -15,14 +15,33 @@ function solve() {
         for (let i = 0; i < furnitureList.length; i++) {
 
             let furniture = furnitureList[i];
-            let rows = document.getElementsByTagName("tbody")[0];
-            let row = rows.children[i];
-            let newRow = row.cloneNode(true);
-            rows.appendChild(newRow);
-            newRow.children[0].children[0].setAttribute('src', furniture["img"]);
-            newRow.children[1].children[0].textContent = furniture["name"];
-            newRow.children[2].children[0].textContent = furniture["price"];
-            newRow.children[3].children[0].textContent = furniture["decFactor"];
+            let table = document.getElementsByTagName("table")[0];
+            let newRow = table.insertRow();
+
+            let cell1 = newRow.insertCell();
+            let img = document.createElement("img");
+            img.setAttribute('src', furniture["img"]);
+            cell1.appendChild(img);
+
+            let cell2 = newRow.insertCell();
+            let name = document.createElement("p");
+            name.textContent = furniture["name"];
+            cell2.appendChild(name);
+
+            let cell3 = newRow.insertCell();
+            let price = document.createElement("p");
+            price.textContent = furniture["price"];
+            cell3.appendChild(price);
+
+            let cell4 = newRow.insertCell();
+            let decFactor = document.createElement("p");
+            decFactor.textContent = furniture["decFactor"];
+            cell4.appendChild(decFactor);
+
+            let cell5 = newRow.insertCell();
+            let checkBox = document.createElement("input");
+            checkBox.setAttribute("type", "checkbox");
+            cell5.appendChild(checkBox);
         }
         generateBtn.disabled = true;
     });
@@ -36,7 +55,6 @@ function solve() {
 
     let buyArea = textsArea[1];
     let buyBtn = document.getElementsByTagName("button")[1];
-    //textsArea[1].disabled = false;
 
     buyBtn.addEventListener("click", () => {
 
