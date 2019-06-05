@@ -1,15 +1,11 @@
 function solve(arr) {
-
-    let evenElements = [];
-
-
-    for (let i = 0; i < arr.length; i++) {
-
-        if (i % 2 == 0) {
-            evenElements.push(arr[i]);
+    let elements = [];
+    arr.map((e, index) => {
+        if (index % 2 == 0) {
+            elements.push(e);
         }
-    }
-    console.log(evenElements.join(" "));
+    });
+    console.log(elements.join(" "));
 }
 
 solve(['20', '30', '40']);
