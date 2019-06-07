@@ -5,6 +5,7 @@ function matrix(row, col) {
     let endCol = row - 1;
     let startRow = 0;
     let endRow = row - 1;
+    
     while (startCol <= endCol && startRow <= endRow) {
         for (let i = startCol; i <= endCol; i++) {
             result[startRow][i] = counter;
@@ -35,7 +36,6 @@ function matrix(row, col) {
     for (let row of result) {
 
         console.log(row.join(' '));
-
     }
 }
 
