@@ -6,21 +6,22 @@ function solve(capacity, arr) {
     let passengersAboard = [];
     let passengersForNextWagon = 0;
     let passengersLeft = 0;
+    let passengersIn = 0;
 
     for (let i = 0; i < wagons; i++) {
 
-        if (passengersForEachWagon[i] + passengersForNextWagon + passengersLeft <= capacityOfWagon) {
+        if (passengersForEachWagon[i] + passengersLeft <= capacityOfWagon) {
 
-            passengersAboard.push(passengersForEachWagon[i] + passengersForNextWagon + passengersLeft);
+            passengersAboard.push(passengersForEachWagon[i] + passengersLeft);
 
-        } else if (passengersForEachWagon[i] + passengersForNextWagon > capacityOfWagon) {
+        } else if (passengersForEachWagon[i] +  passengersLeft > capacityOfWagon) {
 
             passengersLeft = (passengersForEachWagon[i] - capacityOfWagon);
-            let passengersIn = passengersForEachWagon[i] - passengersLeft;
+            passengersIn = passengersForEachWagon[i] - passengersLeft;
 
             passengersAboard.push(passengersIn);
 
-            passengersForNextWagon += passengersLeft;
+            //passengersForNextWagon += passengersLeft;
         }
     }
     console.log(passengersAboard);

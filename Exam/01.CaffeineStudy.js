@@ -23,7 +23,7 @@ function solve(days) {
                 caffeine += 450; //3 energy drinks every 5th day
             }
             if(i % 9 == 0){
-                caffeine += 300; //+2 bottles of coca cola and 2 energy drinks * 100ml
+                caffeine += 340; //+2 bottles of coca cola and 2 energy drinks * 100ml
             }
         }
     }
