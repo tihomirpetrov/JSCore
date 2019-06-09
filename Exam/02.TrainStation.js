@@ -5,28 +5,25 @@ function solve(capacity, arr) {
     let wagons = arr.length;
     let passengersAboard = [];
     let passengersForNextWagon = 0;
+    let passengersLeft = 0;
 
     for (let i = 0; i < wagons; i++) {
 
+        if (passengersForEachWagon[i] + passengersForNextWagon + passengersLeft <= capacityOfWagon) {
 
-        if (passengersForEachWagon[i] <= capacityOfWagon) {
+            passengersAboard.push(passengersForEachWagon[i] + passengersForNextWagon + passengersLeft);
 
-            passengersAboard.push(passengersForEachWagon[i]);
-            continue;
-        } else if (passengersForEachWagon[i] > capacityOfWagon) {
+        } else if (passengersForEachWagon[i] + passengersForNextWagon > capacityOfWagon) {
 
-            passengersForEachWagon[i] -= capacityOfWagon;
-            let passengersIn = capacityOfWagon;
+            passengersLeft = (passengersForEachWagon[i] - capacityOfWagon);
+            let passengersIn = passengersForEachWagon[i] - passengersLeft;
+
             passengersAboard.push(passengersIn);
 
-            passengersForNextWagon += passengersForEachWagon[i] - capacityOfWagon;
-
+            passengersForNextWagon += passengersLeft;
         }
-
     }
-
     console.log(passengersAboard);
-
 }
 
 solve(10, [9, 39, 1, 0, 0]);
