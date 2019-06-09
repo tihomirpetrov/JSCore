@@ -4,27 +4,36 @@ function solve(capacity, arr) {
     let passengersForEachWagon = arr;
     let wagons = arr.length;
     let passengersAboard = [];
-    let passengersForNextWagon = 0;
-    let passengersLeft = 0;
-    let passengersIn = 0;
+    let currentPassengers = 0;
 
     for (let i = 0; i < wagons; i++) {
 
-        if (passengersForEachWagon[i] + passengersLeft <= capacityOfWagon) {
+        currentPassengers += Number(passengersForEachWagon[i]);
+        let passengersIn = 0;
 
-            passengersAboard.push(passengersForEachWagon[i] + passengersLeft);
+        if (currentPassengers <= capacityOfWagon) {
 
-        } else if (passengersForEachWagon[i] +  passengersLeft > capacityOfWagon) {
+            passengersIn = currentPassengers;
+            currentPassengers = 0;
 
-            passengersLeft = (passengersForEachWagon[i] - capacityOfWagon);
-            passengersIn = passengersForEachWagon[i] - passengersLeft;
+        } else  {
 
-            passengersAboard.push(passengersIn);
-
-            //passengersForNextWagon += passengersLeft;
+            passengersIn = capacityOfWagon;
+            currentPassengers -= capacityOfWagon;
         }
+        passengersAboard.push(passengersIn);
     }
-    console.log(passengersAboard);
+
+    let train = JSON.stringify(passengersAboard.join(', '));
+    let output = JSON.parse(train);
+
+    console.log(`[ ${output} ]`);
+
+    if (currentPassengers > 0) {
+        console.log(`Could not fit ${currentPassengers} passengers`);
+    } else {
+        console.log(`All passengers aboard`);
+    }
 }
 
 solve(10, [9, 39, 1, 0, 0]);
